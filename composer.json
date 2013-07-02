@@ -1,0 +1,13 @@
+{
+	"name" : "alsar/stack-ip-restrict",
+	"require" : {
+		"stack/url-map" : "master@dev",
+		"stack/builder" : "master@dev",
+		"php" : ">=5.4"
+	},
+	"autoload" : {
+		"psr-0" : {
+			"Alsar" : "src"
+		}
+	}
+}
