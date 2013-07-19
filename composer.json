@@ -1,8 +1,12 @@
 {
 	"name" : "alsar/stack-ip-restrict",
 	"require" : {
-		"stack/builder" : "master@dev",
+		"symfony/http-foundation" : "~2.1",
+		"symfony/http-kernel" : "~2.1",
 		"php" : ">=5.4"
+	},
+	"require-dev" : {
+		"stack/builder" : "1.0.*@dev"
 	},
 	"autoload" : {
 		"psr-0" : {
