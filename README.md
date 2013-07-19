@@ -1,6 +1,6 @@
 # IpRestrict Stack middleware
 
-Stack middleware for allowing application access for specific IPs.
+[Stack](http://stackphp.com) middleware for allowing application access for specific IPs.
 
 
 ## Example
