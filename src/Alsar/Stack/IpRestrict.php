@@ -18,7 +18,8 @@ class IpRestrict implements HttpKernelInterface
     private $allowedIps;
 
     /**
-     * @param array $allowedIps
+     * @param HttpKernelInterface $app
+     * @param array               $allowedIps
      */
     public function __construct(HttpKernelInterface $app, array $allowedIps)
     {
@@ -33,11 +34,9 @@ class IpRestrict implements HttpKernelInterface
     {
         $ip = $request->getClientIp();
 
-        if (!in_array($ip, $this->allowedIps))
-        {
+        if (!in_array($ip, $this->allowedIps)) {
             return new Response(sprintf('IP %s is not allowed.', $ip), 403);
         }
-
 
         return $this->app->handle($request, $type, $catch);
     }
