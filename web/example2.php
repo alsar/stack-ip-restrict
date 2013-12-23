@@ -8,12 +8,14 @@ use Alsar\Stack\RandomResponseApplication;
 $app = new RandomResponseApplication(1, 100);
 $appDev = new RandomResponseApplication(500, 600);
 
-$appDev = (new Stack\Builder())
-    ->push('Alsar\Stack\IpRestrict', ['127.0.0.1'])
+$stackDev = new Stack\Builder();
+$stackDev
+    ->push('Alsar\Stack\IpRestrict', array('127.0.0.1'))
     ->resolve($appDev);
 
-$app = (new Stack\Builder())
-    ->push('Stack\UrlMap', ['/dev' => $appDev])
+$stack = new Stack\Builder();
+$stack
+    ->push('Stack\UrlMap', array('/dev' => $appDev))
     ->resolve($app);
 
 $request = Request::createFromGlobals();
