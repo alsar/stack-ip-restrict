@@ -1,30 +1,34 @@
 # IpRestrict Stack middleware
 
-[Stack](http://stackphp.com) middleware for allowing application access for specific IPs.
+[Stack](http://stackphp.com) middleware to restrict application access for specific IP addresses.
 
-
-## Example
+## Usage
+### Silex example
 ```php
-require_once __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
-use Alsar\Stack\RandomResponseApplication;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Alsar\Stack\IpRestrict;
 
-$app = new RandomResponseApplication(1, 100);
+$app = new Silex\Application();
+
+$app->get('/', function(Request $request) {
+    return new Response('Hello world!', 200);
+});
 
 $app = (new Stack\Builder())
     ->push('Alsar\Stack\IpRestrict', ['127.0.0.1'])
-    ->resolve($app);
+    ->resolve($app)
+;
 
 $request = Request::createFromGlobals();
-
-$response = $app->handle($request);
-$response->send();
+$response = $app->handle($request)->send();
 
 $app->terminate($request, $response);
 ```
 
-## Symfony example
+### Symfony example
 ```php
 # web/app_dev.php
 
