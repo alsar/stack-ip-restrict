@@ -1,1 +1,7 @@
 /vendor/
+/bin/
+/build/
+/composer.phar
+/phpunit.xml
+/composer.lock
+!.gitkeep

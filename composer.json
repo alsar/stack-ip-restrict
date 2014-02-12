@@ -1,16 +1,29 @@
 {
 	"name" : "alsar/stack-ip-restrict",
+	"license" : "MIT",
+	"type" : "library",
+	"description" : "Stack middleware for allowing application access for specific IP addresses",
+	"keywords" : [
+		"stack",
+		"ip restrict",
+		"stack middleware"
+	],
 	"require" : {
 		"symfony/http-foundation" : "~2.1",
 		"symfony/http-kernel" : "~2.1",
 		"php" : ">=5.4"
 	},
 	"require-dev" : {
-		"stack/builder" : "1.0.*@dev"
+		"stack/builder" : "~1.0",
+		"silex/silex" : "~1.0",
+		"phpunit/phpunit" : "~3.7"
 	},
 	"autoload" : {
-		"psr-0" : {
-			"Alsar" : "src"
+		"psr-4" : {
+			"Alsar\\Stack\\" : "src/"
 		}
+	},
+	"config" : {
+		"bin-dir" : "bin"
 	}
 }
