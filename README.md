@@ -54,3 +54,19 @@ $response = $kernel->handle($request);
 $response->send();
 $kernel->terminate($request, $response);
 ```
+
+## Intallation
+
+The recommended way to install this library is through [Composer](http://getcomposer.org/):
+
+``` json
+{
+    "require": {
+        "alsar/stack-ip-restrict": "~1.0"
+    }
+}
+```
+
+## License
+
+This library is released under the MIT License. See the bundled LICENSE file for details.
